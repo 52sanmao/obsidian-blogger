@@ -80,7 +80,7 @@ class BloggerProfileModal extends Modal {
         .setDesc(t('profileModal_nameDesc'))
         .addText((text) =>
           text
-            .setPlaceholder('Profile name')
+            .setPlaceholder(t('profileModal_namePlaceholder'))
             .setValue(this.profileData.name ?? '')
             .onChange((value) => {
               this.profileData.name = value;

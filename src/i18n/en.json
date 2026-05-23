@@ -92,10 +92,15 @@
   "profileModal_Save": "Save",
   "profileModal_name": "Name",
   "profileModal_nameDesc": "Name of this profile.",
+  "profileModal_namePlaceholder": "Profile name",
   "profileModal_setDefault": "Set default",
   "profilesChooserModal_title": "Profiles",
   "profilesChooserModal_pickOne": "Click to pick one profile to publish.",
   "profiles_default": "Default profile",
   "profileNotMatch_useOld": "Use \"<%= profileName %>\" in the note",
-  "profileNotMatch_useNew": "Create a new post using \"<%= profileName %>\""
+  "profileNotMatch_useNew": "Create a new post using \"<%= profileName %>\"",
+  "publishModal_wrongMatterDataForPage": "The matter data contains tags or categories, which are not allowed for page type. Are you sure you want to delete this data?",
+  "fallback_title": "A post from Obsidian!",
+  "error_inconsistentPostIds": "Inconsistent post IDs. This should be a bug: <%= postId1 %> vs <%= postId2 %>",
+  "error_uploadFailed": "Upload failed"
 }

@@ -68,7 +68,7 @@ export abstract class AbstractBloggerClient implements BloggerClient {
   }): Promise<BloggerClientResult<BloggerPublishResult>> {
     const { postParams, updateMatterData } = params;
     const result = await this.publish(
-      postParams.title ?? 'A post from Obsidian!',
+      postParams.title ?? getGlobalI18n().t('fallback_title'),
       // FIXME: this modification should be done on the renderer side
       `<div class="obsidian-blogger-post">
       ${getGlobalMarkdownParser().render(postParams.content)}
@@ -393,7 +393,7 @@ export class BloggerRestClientGoogleOAuth2Context implements BloggerRestClientCo
       if (response.id) {
         if (postParams.postId !== undefined && postParams.postId !== response.id) {
           throw new Error(
-            `Inconsistent post IDs. This should be a bug: ${postParams.postId} vs ${response.id}`,
+            getGlobalI18n().t('error_inconsistentPostIds', { postId1: postParams.postId ?? 'undefined', postId2: response.id }),
           );
         }
         return {
@@ -413,7 +413,7 @@ export class BloggerRestClientGoogleOAuth2Context implements BloggerRestClientCo
       } else if (response.errors) {
         throw new Error(response.errors.error.message);
       }
-      throw new Error('Upload failed');
+      throw new Error(getGlobalI18n().t('error_uploadFailed'));
     },
   };
 }
